@@ -33,4 +33,12 @@ class AppTextStyles {
       color: Colors.blue,
     );
   }
+
+  static TextStyle descriptionStyle() {
+    return GoogleFonts.signikaNegative(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    );
+  }
 }

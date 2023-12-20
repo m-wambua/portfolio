@@ -1,8 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
-import 'package:flutter_application_1/main.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage([Key? key]) : super(key: key);
@@ -109,7 +109,65 @@ class HomePage extends StatelessWidget {
                                   textStyle: AppTextStyles.attributeStyle()),
                               //TyperAnimatedText('')
                             ],
-                          )
+                            pause: const Duration(milliseconds: 1000),
+                            displayFullTextOnTap: true,
+                            stopPauseOnTap: true,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'Welcome! I\'m Michael Wambua,\n'
+                        'an Electrical Engineering grad passionate \n'
+                        'about tech-driven innovation in energy. \n'
+                        'As a Flutter Developer and Machine Learning Engineer\n,'
+                        'I blend technical expertise with hands-on experience.\n'
+                        'Explore my portfolio for cutting-edge solutions and\n'
+                        'sustainable practices. Let\'s innovate together!',
+                        style: AppTextStyles.descriptionStyle(),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            maxRadius: 24,
+                            backgroundColor: AppColors.socialsColor,
+                            child: CircleAvatar(
+                              maxRadius: 23,
+                              backgroundColor: AppColors.bgColor,
+                              child: Image.asset(AppAssets.github),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          CircleAvatar(
+                            maxRadius: 24,
+                            backgroundColor: AppColors.socialsColor,
+                            child: CircleAvatar(
+                              maxRadius: 23,
+                              backgroundColor: AppColors.bgColor,
+                              child: Image.asset(AppAssets.linkedin,
+                                  width: 24, height: 20),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          CircleAvatar(
+                            maxRadius: 24,
+                            backgroundColor: AppColors.socialsColor,
+                            child: CircleAvatar(
+                              maxRadius: 23,
+                              backgroundColor: AppColors.bgColor,
+                              child: Image.asset(AppAssets.linkedin,
+                                  width: 24, height: 20),
+                            ),
+                          ),
                         ],
                       ),
                     ],

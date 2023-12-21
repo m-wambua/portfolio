@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
+import 'package:flutter_application_1/main.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage([Key? key]) : super(key: key);
@@ -129,7 +130,7 @@ class HomePage extends StatelessWidget {
                         style: AppTextStyles.descriptionStyle(),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 15,
                       ),
                       Row(
                         children: [
@@ -137,39 +138,37 @@ class HomePage extends StatelessWidget {
                             maxRadius: 24,
                             backgroundColor: AppColors.socialsColor,
                             child: CircleAvatar(
-                              maxRadius: 23,
+                              maxRadius: 22,
                               backgroundColor: AppColors.bgColor,
-                              child: Image.asset(AppAssets.github),
+                              child: Image.asset(AppAsset.github),
                             ),
                           ),
                           const SizedBox(
-                            width: 10,
+                            width: 20,
                           ),
                           CircleAvatar(
                             maxRadius: 24,
                             backgroundColor: AppColors.socialsColor,
                             child: CircleAvatar(
-                              maxRadius: 23,
+                              maxRadius: 22,
                               backgroundColor: AppColors.bgColor,
-                              child: Image.asset(AppAssets.linkedin,
-                                  width: 24, height: 20),
+                              child: Image.asset(AppAsset.linkedin),
                             ),
                           ),
                           const SizedBox(
-                            width: 15,
+                            width: 20,
                           ),
                           CircleAvatar(
                             maxRadius: 24,
                             backgroundColor: AppColors.socialsColor,
                             child: CircleAvatar(
-                              maxRadius: 23,
+                              maxRadius: 22,
                               backgroundColor: AppColors.bgColor,
-                              child: Image.asset(AppAssets.linkedin,
-                                  width: 24, height: 20),
+                              child: Image.asset(AppAsset.github),
                             ),
-                          ),
+                          )
                         ],
-                      ),
+                      )
                     ],
                   )
                 ],

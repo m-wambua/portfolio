@@ -41,4 +41,12 @@ class AppTextStyles {
       color: Colors.white,
     );
   }
+
+  static TextStyle downloadButton() {
+    return GoogleFonts.signikaNegative(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    );
+  }
 }

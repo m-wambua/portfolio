@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
-import 'package:flutter_application_1/main.dart';
+//import 'package:flutter_application_1/main.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage([Key? key]) : super(key: key);
@@ -130,7 +130,7 @@ class HomePage extends StatelessWidget {
                         style: AppTextStyles.descriptionStyle(),
                       ),
                       const SizedBox(
-                        height: 15,
+                        height: 20,
                       ),
                       Row(
                         children: [
@@ -138,36 +138,67 @@ class HomePage extends StatelessWidget {
                             maxRadius: 24,
                             backgroundColor: AppColors.socialsColor,
                             child: CircleAvatar(
-                              maxRadius: 22,
+                              maxRadius: 23,
                               backgroundColor: AppColors.bgColor,
-                              child: Image.asset(AppAsset.github),
+                              child: Image.asset(
+                                AppAsset.github,
+                                width: 40,
+                                height: 40,
+                              ),
                             ),
                           ),
                           const SizedBox(
-                            width: 20,
+                            width: 10,
                           ),
                           CircleAvatar(
                             maxRadius: 24,
                             backgroundColor: AppColors.socialsColor,
                             child: CircleAvatar(
-                              maxRadius: 22,
+                              maxRadius: 23,
                               backgroundColor: AppColors.bgColor,
-                              child: Image.asset(AppAsset.linkedin),
+                              child: Image.asset(
+                                AppAsset.linkedin,
+                                width: 40,
+                                height: 40,
+                                color: AppColors.bgColor,
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
                           const SizedBox(
-                            width: 20,
+                            width: 15,
                           ),
                           CircleAvatar(
                             maxRadius: 24,
                             backgroundColor: AppColors.socialsColor,
                             child: CircleAvatar(
-                              maxRadius: 22,
+                              maxRadius: 23,
                               backgroundColor: AppColors.bgColor,
-                              child: Image.asset(AppAsset.github),
+                              child: Image.asset(AppAsset.github,
+                                  width: 40, height: 40),
                             ),
-                          )
+                          ),
                         ],
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      MaterialButton(
+                        color: AppColors.socialsColor,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 14, vertical: 8),
+                        shape: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        //height: 45,
+                        minWidth: 140,
+                        hoverColor: AppColors.bgColor,
+                        splashColor: AppColors.nameColor,
+                        onPressed: () {},
+                        child: Text(
+                          'Download CV',
+                          style: AppTextStyles.downloadButton(),
+                        ),
                       )
                     ],
                   )

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
@@ -72,67 +73,83 @@ class HomePage extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Hello, It\'s me',
-                        style: AppTextStyles.normalTextStyle(),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'Michael Wambua',
-                        style: AppTextStyles.nameTextStyle(),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            'And I am a: ',
+                      FadeInDown(
+                          duration: const Duration(milliseconds: 1000),
+                          child: Text(
+                            'Hello, It\'s me',
                             style: AppTextStyles.normalTextStyle(),
-                          ),
-                          AnimatedTextKit(
-                            animatedTexts: [
-                              TyperAnimatedText('Python Developer',
-                                  textStyle: AppTextStyles.attributeStyle()),
-                              TyperAnimatedText('Machine Learning Engineer',
-                                  textStyle: AppTextStyles.attributeStyle()),
-                              TyperAnimatedText('Data Analyst',
-                                  textStyle: AppTextStyles.attributeStyle()),
-                              TyperAnimatedText('C++ Developer',
-                                  textStyle: AppTextStyles.attributeStyle()),
-                              TyperAnimatedText('Flutter Developer',
-                                  textStyle: AppTextStyles.attributeStyle()),
-                              TyperAnimatedText('Freelancer',
-                                  textStyle: AppTextStyles.attributeStyle()),
-                              TyperAnimatedText('Python Automator',
-                                  textStyle: AppTextStyles.attributeStyle()),
-                              //TyperAnimatedText('')
-                            ],
-                            pause: const Duration(milliseconds: 1000),
-                            displayFullTextOnTap: true,
-                            stopPauseOnTap: true,
-                          ),
-                        ],
+                          )),
+                      const SizedBox(
+                        height: 10,
                       ),
+                      FadeInLeft(
+                          duration: const Duration(milliseconds: 1200),
+                          child: Text(
+                            'Michael Wambua',
+                            style: AppTextStyles.nameTextStyle(),
+                          )),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      FadeInRight(
+                          duration: const Duration(milliseconds: 1400),
+                          child: Row(
+                            children: [
+                              Text(
+                                'And I am a: ',
+                                style: AppTextStyles.normalTextStyle(),
+                              ),
+                              AnimatedTextKit(
+                                animatedTexts: [
+                                  TyperAnimatedText('Python Developer',
+                                      textStyle:
+                                          AppTextStyles.attributeStyle()),
+                                  TyperAnimatedText('Machine Learning Engineer',
+                                      textStyle:
+                                          AppTextStyles.attributeStyle()),
+                                  TyperAnimatedText('Data Analyst',
+                                      textStyle:
+                                          AppTextStyles.attributeStyle()),
+                                  TyperAnimatedText('C++ Developer',
+                                      textStyle:
+                                          AppTextStyles.attributeStyle()),
+                                  TyperAnimatedText('Flutter Developer',
+                                      textStyle:
+                                          AppTextStyles.attributeStyle()),
+                                  TyperAnimatedText('Freelancer',
+                                      textStyle:
+                                          AppTextStyles.attributeStyle()),
+                                  TyperAnimatedText('Python Automator',
+                                      textStyle:
+                                          AppTextStyles.attributeStyle()),
+                                  //TyperAnimatedText('')
+                                ],
+                                pause: const Duration(milliseconds: 1000),
+                                displayFullTextOnTap: true,
+                                stopPauseOnTap: true,
+                              ),
+                            ],
+                          )),
                       const SizedBox(
                         height: 5,
                       ),
-                      Text(
-                        'Welcome! I\'m Michael Wambua,\n'
-                        'an Electrical Engineering grad passionate \n'
-                        'about tech-driven innovation in energy. \n'
-                        'As a Flutter Developer and Machine Learning Engineer\n,'
-                        'I blend technical expertise with hands-on experience.\n'
-                        'Explore my portfolio for cutting-edge solutions and\n'
-                        'sustainable practices. Let\'s innovate together!',
-                        style: AppTextStyles.descriptionStyle(),
-                      ),
+                      FadeInUp(
+                          duration: const Duration(milliseconds: 1400),
+                          child: Text(
+                            'Welcome! I\'m Michael Wambua,\n'
+                            'an Electrical Engineering grad passionate \n'
+                            'about tech-driven innovation in energy. \n'
+                            'As a Flutter Developer and Machine Learning Engineer\n,'
+                            'I blend technical expertise with hands-on experience.\n'
+                            'Explore my portfolio for cutting-edge solutions and\n'
+                            'sustainable practices. Let\'s innovate together!',
+                            style: AppTextStyles.descriptionStyle(),
+                          )),
                       const SizedBox(
                         height: 20,
                       ),
-                      Row(
+                      FadeInUp(
+                          child: Row(
                         children: [
                           CircleAvatar(
                             maxRadius: 24,
@@ -179,11 +196,12 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ],
-                      ),
+                      )),
                       const SizedBox(
                         height: 25,
                       ),
-                      MaterialButton(
+                      FadeInUp(
+                          child: MaterialButton(
                         color: AppColors.socialsColor,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 14, vertical: 8),
@@ -199,11 +217,24 @@ class HomePage extends StatelessWidget {
                           'Download CV',
                           style: AppTextStyles.downloadButton(),
                         ),
+                      ))
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 250,
+                  ),
+                  Row(
+                    children: [
+                      Column(),
+                      Image.asset(
+                        AppAsset.github,
+                        width: 300,
+                        height: 330,
                       )
                     ],
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ));

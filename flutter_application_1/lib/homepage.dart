@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
+import 'package:flutter_application_1/globals/widgets/profile_animation.dart';
 //import 'package:flutter_application_1/main.dart';
 
 class HomePage extends StatelessWidget {
@@ -72,6 +73,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       FadeInDown(
                           duration: const Duration(milliseconds: 1000),
@@ -224,13 +226,11 @@ class HomePage extends StatelessWidget {
                     width: 250,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Column(),
-                      Image.asset(
-                        AppAsset.github,
-                        width: 300,
-                        height: 330,
-                      )
+                      const ProfileAnimator(),
                     ],
                   ),
                 ],

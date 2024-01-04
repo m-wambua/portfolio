@@ -49,4 +49,20 @@ class AppTextStyles {
       color: Colors.white,
     );
   }
+
+  static TextStyle AboutMeHeading() {
+    return GoogleFonts.signikaNegative(
+      fontSize: 35,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    );
+  }
+
+  static TextStyle AboutMeMe() {
+    return GoogleFonts.signikaNegative(
+      fontSize: 35,
+      fontWeight: FontWeight.bold,
+      color: Color(0xFF00CCCC),
+    );
+  }
 }

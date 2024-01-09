@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
+import 'package:flutter_application_1/globals/app_buttons.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class AboutMe extends StatelessWidget {
       height: size.height,
       color: AppColors.bgColor2,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
             AppAsset.linkedin,
@@ -41,20 +43,33 @@ class AboutMe extends StatelessWidget {
               const SizedBox(
                 height: 14,
               ),
-              Text(' Flutter Developer', style: AppTextStyles.nameTextStyle()),
+              FadeInLeft(
+                duration: const Duration(milliseconds: 1600),
+                child: Text(' Flutter Developer',
+                    style: AppTextStyles.nameTextStyle()),
+              ),
               const SizedBox(
                 height: 15,
               ),
-              Text(
-                'Welcome! I\'m Michael Wambua,\n'
-                'an Electrical Engineering grad passionate \n'
-                'about tech-driven innovation in energy. \n'
-                'As a Flutter Developer and Machine Learning Engineer\n,'
-                'I blend technical expertise with hands-on experience.\n'
-                'Explore my portfolio for cutting-edge solutions and\n'
-                'sustainable practices. Let\'s innovate together!',
-                style: AppTextStyles.descriptionStyle(),
-              )
+              FadeInLeft(
+                duration: const Duration(milliseconds: 1800),
+                child: Text(
+                  'Welcome! I\'m Michael Wambua,\n'
+                  'an Electrical Engineering grad passionate \n'
+                  'about tech-driven innovation in energy. \n'
+                  'As a Flutter Developer and Machine Learning Engineer ,\n'
+                  'I blend technical expertise with hands-on experience.\n'
+                  'Explore my portfolio for cutting-edge solutions and\n'
+                  'sustainable practices. Let\'s innovate together!',
+                  style: AppTextStyles.descriptionStyle(),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              FadeInUp(
+                  child: AppButtons.buildMaterialButton(
+                      onTap: () {}, buttonName: 'About Me'))
             ],
           ))
         ],

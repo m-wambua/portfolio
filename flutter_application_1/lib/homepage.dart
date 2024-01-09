@@ -3,6 +3,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/aboutme.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
+import 'package:flutter_application_1/globals/app_buttons.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
 import 'package:flutter_application_1/globals/widgets/profile_animation.dart';
@@ -72,10 +73,12 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    //crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       FadeInDown(
                           duration: const Duration(milliseconds: 1000),
@@ -143,7 +146,7 @@ class HomePage extends StatelessWidget {
                             'Welcome! I\'m Michael Wambua,\n'
                             'an Electrical Engineering grad passionate \n'
                             'about tech-driven innovation in energy. \n'
-                            'As a Flutter Developer and Machine Learning Engineer\n,'
+                            'As a Flutter Developer and Machine Learning Engineer ,\n'
                             'I blend technical expertise with hands-on experience.\n'
                             'Explore my portfolio for cutting-edge solutions and\n'
                             'sustainable practices. Let\'s innovate together!',
@@ -205,23 +208,8 @@ class HomePage extends StatelessWidget {
                         height: 25,
                       ),
                       FadeInUp(
-                          child: MaterialButton(
-                        color: AppColors.socialsColor,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 14, vertical: 8),
-                        shape: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(32),
-                        ),
-                        //height: 45,
-                        minWidth: 140,
-                        hoverColor: AppColors.bgColor,
-                        splashColor: AppColors.nameColor,
-                        onPressed: () {},
-                        child: Text(
-                          'Download CV',
-                          style: AppTextStyles.downloadButton(),
-                        ),
-                      ))
+                          child: AppButtons.buildMaterialButton(
+                              onTap: () {}, buttonName: 'Download CV'))
                     ],
                   ),
                   const SizedBox(

@@ -5,8 +5,17 @@ import 'package:flutter_application_1/globals/app_buttons.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
 
-class MyServices extends StatelessWidget {
+class MyServices extends StatefulWidget {
   const MyServices({Key? key}) : super(key: key);
+  @override
+  State<MyServices> createState() => _MyServicesState();
+}
+
+class _MyServicesState extends State<MyServices> {
+  bool isApp = false, isML = false, isData = false;
+  //final onHoverActive = Matrix4.identity()..scale(0, -10, 0);
+  //final onHoverRemove = Matrix4.identity()..scale(0, 0, 0);
+  //final onHoverActive = Matrix4.identity()..scale(0, -10, 0);
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +42,45 @@ class MyServices extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            buildAnimatedContainer(
-                title: 'App Development', asset: AppAsset.code),
+            InkWell(
+                onTap: () {},
+                onHover: (value) {
+                  setState(() {
+                    isApp = value;
+                  });
+                },
+                child: buildAnimatedContainer(
+                  title: 'App Development',
+                  asset: AppAsset.code,
+                  hover: isApp,
+                )),
             const SizedBox(
               width: 15,
             ),
-            buildAnimatedContainer(
-                title: 'Machine Learning', asset: AppAsset.code),
+            InkWell(
+                onTap: () {},
+                onHover: (value) {
+                  setState(() {
+                    isML = value;
+                  });
+                },
+                child: buildAnimatedContainer(
+                    title: 'Machine Learning',
+                    asset: AppAsset.code,
+                    hover: isML)),
             const SizedBox(
               width: 15,
             ),
-            buildAnimatedContainer(title: 'Data Analysis', asset: AppAsset.code)
+            InkWell(
+              onTap: () {},
+              onHover: (value) {
+                setState(() {
+                  isData = value;
+                });
+              },
+              child: buildAnimatedContainer(
+                  title: 'Data Analysis', asset: AppAsset.code, hover: isData),
+            )
           ],
         )
       ]),
@@ -51,17 +88,21 @@ class MyServices extends StatelessWidget {
   }
 
   AnimatedContainer buildAnimatedContainer(
-      {required String title, required String asset}) {
+      {required String title, required String asset, required bool hover}) {
     return AnimatedContainer(
       duration: const Duration(
         milliseconds: 600,
       ),
-      width: 450,
+      width: hover ? 450 : 390,
+      height: hover ? 600 : 620,
+
       //height: 400,
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
       decoration: BoxDecoration(
           color: AppColors.bgColor2,
+          border:
+              hover ? Border.all(color: AppColors.nameColor, width: 4) : null,
           borderRadius: BorderRadius.circular(30),
           boxShadow: const [
             BoxShadow(
@@ -81,7 +122,7 @@ class MyServices extends StatelessWidget {
           height: 20,
         ),
         Text(
-          'App Development',
+          title,
           style: AppTextStyles.nameTextStyle(),
         ),
         const SizedBox(

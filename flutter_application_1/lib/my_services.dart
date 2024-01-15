@@ -24,66 +24,73 @@ class _MyServicesState extends State<MyServices> {
       width: size.width,
       height: size.height,
       color: AppColors.bgColor,
-      child: Column(children: [
-        FadeInRight(
-          duration: const Duration(milliseconds: 1200),
-          child: RichText(
-            text: TextSpan(
-                text: 'My',
-                style: AppTextStyles.AboutMeHeading(),
-                children: [
-                  TextSpan(text: ' Services', style: AppTextStyles.AboutMeMe())
-                ]),
-          ),
-        ),
-        const SizedBox(
-          height: 40,
-        ),
-        Row(
+      child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            InkWell(
-                onTap: () {},
-                onHover: (value) {
-                  setState(() {
-                    isApp = value;
-                  });
-                },
-                child: buildAnimatedContainer(
-                  title: 'App Development',
-                  asset: AppAsset.code,
-                  hover: isApp,
-                )),
-            const SizedBox(
-              width: 15,
+            FadeInRight(
+              duration: const Duration(milliseconds: 1200),
+              child: RichText(
+                text: TextSpan(
+                    text: 'My',
+                    style: AppTextStyles.AboutMeHeading(),
+                    children: [
+                      TextSpan(
+                          text: ' Services', style: AppTextStyles.AboutMeMe())
+                    ]),
+              ),
             ),
-            InkWell(
-                onTap: () {},
-                onHover: (value) {
-                  setState(() {
-                    isML = value;
-                  });
-                },
-                child: buildAnimatedContainer(
-                    title: 'Machine Learning',
-                    asset: AppAsset.code,
-                    hover: isML)),
             const SizedBox(
-              width: 15,
+              height: 40,
             ),
-            InkWell(
-              onTap: () {},
-              onHover: (value) {
-                setState(() {
-                  isData = value;
-                });
-              },
-              child: buildAnimatedContainer(
-                  title: 'Data Analysis', asset: AppAsset.code, hover: isData),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                    onTap: () {},
+                    onHover: (value) {
+                      setState(() {
+                        isApp = value;
+                      });
+                    },
+                    child: buildAnimatedContainer(
+                      title: 'App Development',
+                      asset: AppAsset.code,
+                      hover: isApp,
+                    )),
+                const SizedBox(
+                  width: 15,
+                ),
+                InkWell(
+                    onTap: () {},
+                    onHover: (value) {
+                      setState(() {
+                        isML = value;
+                      });
+                    },
+                    child: buildAnimatedContainer(
+                        title: 'Machine Learning',
+                        asset: AppAsset.code,
+                        hover: isML)),
+                const SizedBox(
+                  width: 15,
+                ),
+                InkWell(
+                  onTap: () {},
+                  onHover: (value) {
+                    setState(() {
+                      isData = value;
+                    });
+                  },
+                  child: buildAnimatedContainer(
+                      title: 'Data Analysis',
+                      asset: AppAsset.code,
+                      hover: isData),
+                )
+              ],
             )
-          ],
-        )
-      ]),
+          ]),
     );
   }
 

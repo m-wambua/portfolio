@@ -7,6 +7,7 @@ import 'package:flutter_application_1/globals/app_buttons.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
 import 'package:flutter_application_1/globals/widgets/profile_animation.dart';
+import 'package:flutter_application_1/my_portfolio.dart';
 import 'package:flutter_application_1/my_services.dart';
 //import 'package:flutter_application_1/main.dart';
 
@@ -231,6 +232,7 @@ class HomePage extends StatelessWidget {
               ),
               const AboutMe(),
               const MyServices(),
+              const MyPortfolio()
             ],
           ),
         ));

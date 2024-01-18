@@ -65,4 +65,17 @@ class AppTextStyles {
       color: Color(0xFF00CCCC),
     );
   }
+
+  static TextStyle PortfolioTextHeading() {
+    return GoogleFonts.signikaNegative(
+        fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black);
+  }
+
+  static TextStyle PortfolioTextNormal() {
+    return GoogleFonts.signikaNegative(
+      fontSize: 15,
+      fontWeight: FontWeight.normal,
+      color: Colors.black,
+    );
+  }
 }

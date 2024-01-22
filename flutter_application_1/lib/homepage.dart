@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/aboutme.dart';
+import 'package:flutter_application_1/contact_me.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_buttons.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
@@ -11,8 +12,28 @@ import 'package:flutter_application_1/my_portfolio.dart';
 import 'package:flutter_application_1/my_services.dart';
 //import 'package:flutter_application_1/main.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage([Key? key]) : super(key: key);
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final onMenuHover = Matrix4.identity()..scale(1.0);
+  final menuItems = <String>[
+    'Home',
+    'About',
+    'Services',
+    'Portfolio',
+    'Contact',
+  ];
+
+  final socialButtons = <String>[AppAsset.linkedin, AppAsset.github];
+  var menuIndex = 0;
+  var socialBI;
+
+  //Navigate to AboutMe page
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -31,38 +52,37 @@ class HomePage extends StatelessWidget {
                   style: AppTextStyles.headerTextStyl(),
                 ),
                 const Spacer(),
-                Text(
-                  'Home',
-                  style: AppTextStyles.headerTextStyl(),
+                SizedBox(
+                  height: 30,
+                  child: ListView.separated(
+                      itemCount: menuItems.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      separatorBuilder: (context, child) =>
+                          const SizedBox(width: 5),
+                      itemBuilder: (context, index) {
+                        return MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: InkWell(
+                            onTap: () {},
+                            borderRadius: BorderRadius.circular(100),
+                            hoverColor: AppColors.nameColor,
+                            onHover: (value) {
+                              setState(() {
+                                if (value) {
+                                  menuIndex = index;
+                                } else {
+                                  menuIndex = 0;
+                                }
+                              });
+                            },
+                            child: buildNavBarAnimatedContainer(
+                                index, menuIndex == index ? true : false),
+                          ),
+                        );
+                      }),
                 ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Text(
-                  'About',
-                  style: AppTextStyles.headerTextStyl(),
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Text(
-                  'Services',
-                  style: AppTextStyles.headerTextStyl(),
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Text(
-                  'Portfolio',
-                  style: AppTextStyles.headerTextStyl(),
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Text(
-                  'Contact',
-                  style: AppTextStyles.headerTextStyl(),
-                ),
+
                 //Text('Portfolio'),
               ],
             )),
@@ -232,9 +252,23 @@ class HomePage extends StatelessWidget {
               ),
               const AboutMe(),
               const MyServices(),
-              const MyPortfolio()
+              const MyPortfolio(),
+              const ContactMe()
             ],
           ),
+        ));
+  }
+
+  AnimatedContainer buildNavBarAnimatedContainer(int index, bool hover) {
+    return AnimatedContainer(
+        alignment: Alignment.center,
+        width: hover ? 80 : 75,
+        duration: const Duration(milliseconds: 200),
+        transform: hover ? onMenuHover : null,
+        child: Text(
+          menuItems[index],
+          style: AppTextStyles.NavBarTextStyle(
+              color: hover ? AppColors.nameColor : Colors.white),
         ));
   }
 }

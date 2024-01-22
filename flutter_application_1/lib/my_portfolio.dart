@@ -71,13 +71,19 @@ class _MyPortfolioState extends State<MyPortfolio> {
                   child: InkWell(
                 onTap: () {},
                 onHover: (value) {
-                  setState(() {
+                  if (value) {
                     setState(() {
                       if (value) {
                         hoverIndex = index;
                       }
                     });
-                  });
+                  } else {
+                    setState(() {
+                      if (value) {
+                        hoverIndex = index;
+                      }
+                    });
+                  }
                 },
                 child: Stack(
                   children: [
@@ -119,6 +125,19 @@ class _MyPortfolioState extends State<MyPortfolio> {
                               'about tech-driven innovation in energy. \n',
                               style: AppTextStyles.PortfolioTextNormal(),
                             ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+
+                            CircleAvatar(
+                                maxRadius: 25,
+                                backgroundColor: Colors.white,
+                                child: Image.asset(
+                                  AppAsset.share,
+                                  width: 30,
+                                  height: 30,
+                                  fit: BoxFit.fill,
+                                ))
                             //Text('App Development',style: AppTextStyles.PortfolioText(),),
                           ]),
                         ))

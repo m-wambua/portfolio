@@ -4,6 +4,8 @@ import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_buttons.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class MyServices extends StatefulWidget {
   const MyServices({Key? key}) : super(key: key);

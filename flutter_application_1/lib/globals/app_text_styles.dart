@@ -91,4 +91,17 @@ class AppTextStyles {
         fontSize: 20,
         fontWeight: FontWeight.bold);
   }
+
+  static TextStyle FinePrintStyle() {
+    return GoogleFonts.signikaNegative(
+        fontSize: 15, fontWeight: FontWeight.normal, color: Colors.white);
+  }
+
+  static TextStyle attributeStyleSub() {
+    return GoogleFonts.signikaNegative(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: Colors.blue,
+    );
+  }
 }

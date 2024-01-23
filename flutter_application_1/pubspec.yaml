@@ -39,6 +39,9 @@ dependencies:
   animated_text_kit: ^4.2.2
   assets: ^0.0.1
   animate_do: ^3.1.2
+  url_launcher: ^6.2.4
+  open_file: ^3.3.2
+  scrollable_positioned_list: ^0.3.8
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +75,7 @@ flutter:
      - assets/image/work1.jpg
      - assets/image/work2.jpg
      - assets/image/share.png
+     - assets/files/cv.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

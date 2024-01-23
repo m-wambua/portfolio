@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/aboutmeinfull.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
@@ -69,7 +70,13 @@ class AboutMe extends StatelessWidget {
               ),
               FadeInUp(
                   child: AppButtons.buildMaterialButton(
-                      onTap: () {}, buttonName: 'About Me'))
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProfilePage()));
+                      },
+                      buttonName: 'About Me'))
             ],
           ))
         ],

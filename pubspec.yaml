@@ -76,6 +76,7 @@ flutter:
      - assets/image/work2.jpg
      - assets/image/share.png
      - assets/files/cv.pdf
+     - assets/image/profile.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -28,8 +28,8 @@ class _ProfileAnimationState extends State<ProfileAnimator>
     return SlideTransition(
         position: _animation,
         child: Image.asset(
-          AppAsset.github,
-          width: 300,
+          AppAsset.profile,
+          width: 400,
           height: 330,
         ));
   }

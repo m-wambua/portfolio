@@ -19,7 +19,7 @@ class AboutMe extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            AppAsset.linkedin,
+            AppAsset.profile,
             height: 450,
             width: 400,
           ),

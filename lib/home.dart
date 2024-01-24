@@ -145,7 +145,7 @@ class Home extends StatelessWidget {
                           maxRadius: 23,
                           backgroundColor: AppColors.bgColor,
                           child: Image.asset(
-                            AppAsset.ln,
+                            AppAsset.linkedin,
                             width: 30,
                             height: 30,
                             color: AppColors.bgColor,

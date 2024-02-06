@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/homepage.dart';
-import 'package:flutter_application_1/landingpage.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +32,7 @@ class MyApp extends StatelessWidget {
           // tested with just a hot reload.
 
           ),
-      home: LandingPage(),
+      home: const HomePage(),
     );
   }
 }

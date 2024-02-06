@@ -1,19 +1,14 @@
-import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_buttons.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
 import 'package:flutter_application_1/globals/widgets/profile_animation.dart';
-import 'package:open_file/open_file.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 import 'package:url_launcher/url_launcher_string.dart';
-import 'package:path_provider/path_provider.dart';
+// ignore: depend_on_referenced_packages
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -130,12 +125,18 @@ class Home extends StatelessWidget {
                     const SizedBox(
                       width: 100,
                     ),
+                    const SizedBox(
+                      width: 15,
+                    ),
                     InkWell(
                       onTap: () {
+                        // Open GitHub Url
                         _launchURL(
                             'https://www.linkedin.com/in/michael-wambua-594246223/');
                       },
-                      onHover: (value) {},
+                      onHover: (value) {
+                        //Handle hover state
+                      },
                       hoverColor: AppColors.nameColor,
                       splashColor: Colors.white,
                       child: CircleAvatar(
@@ -146,16 +147,11 @@ class Home extends StatelessWidget {
                           backgroundColor: AppColors.bgColor,
                           child: Image.asset(
                             AppAsset.linkedin,
-                            width: 30,
-                            height: 30,
-                            color: AppColors.bgColor,
-                            fit: BoxFit.contain,
+                            width: 40,
+                            height: 40,
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 15,
                     ),
                   ],
                 )),
@@ -164,9 +160,11 @@ class Home extends StatelessWidget {
                 ),
                 FadeInUp(
                     child: AppButtons.buildMaterialButton(
-                        onTap: () {
-                          _launchPDFOpen();
-                        },
+                        onTap: () =>
+                            //_launchURL('assets/files/cv.pdf');
+                            // _launchPDF();
+                            _launchURL(
+                                'https://drive.google.com/file/d/1P66fj6vbxN7eHStRJHP7r_-YA_AWVVdw/view'),
                         buttonName: 'Download CV'))
               ],
             ),
@@ -197,36 +195,6 @@ class Home extends StatelessWidget {
     } catch (e) {
       print('Error launching URL: $e');
       // Handle the exception or perform an alternative action
-    }
-  }
-
-  void _launchPDF() async {
-    final ByteData data = await rootBundle.load('assets//files/cv.pdf');
-    final Uint8List bytes = data.buffer.asUint8List();
-
-    try {
-      final Directory tempDir = await getTemporaryDirectory();
-      final String tempPath = tempDir.path + '/cv.pdf';
-      final File tempFile = File(tempPath);
-      await tempFile.writeAsBytes(bytes, flush: true);
-
-      if (await canLaunchUrlString(tempPath)) {
-        await launchUrlString(tempPath);
-      } else {
-        print('Could not launch $tempPath');
-      }
-    } catch (e) {
-      print('Error launching PDF: $e');
-    }
-  }
-
-  void _launchPDFOpen() async {
-    final filePath = 'assets/files/cv.pdf';
-
-    try {
-      await OpenFile.open(filePath);
-    } catch (e) {
-      print('Error opening PDF: $e');
     }
   }
 }

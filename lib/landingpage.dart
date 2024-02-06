@@ -6,7 +6,10 @@ import 'my_portfolio.dart';
 import 'contact_me.dart';
 
 class LandingPage extends StatefulWidget {
+  const LandingPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _LandingPageState createState() => _LandingPageState();
 }
 
@@ -14,10 +17,10 @@ class _LandingPageState extends State<LandingPage> {
   int _selectedIndex = 0;
 
   final List<Widget> pages = [
-    HomePage(),
-    AboutMe(),
-    MyServices(),
-    MyPortfolio(),
+    const HomePage(),
+    const AboutMe(),
+    const MyServices(),
+    const MyPortfolio(),
     ContactMe(),
   ];
 

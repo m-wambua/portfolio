@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/globals/app_colors.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyles {
@@ -51,7 +51,7 @@ class AppTextStyles {
     );
   }
 
-  static TextStyle AboutMeHeading() {
+  static TextStyle aboutMeHeading() {
     return GoogleFonts.signikaNegative(
       fontSize: 35,
       fontWeight: FontWeight.bold,
@@ -59,20 +59,20 @@ class AppTextStyles {
     );
   }
 
-  static TextStyle AboutMeMe() {
+  static TextStyle aboutMeMe() {
     return GoogleFonts.signikaNegative(
       fontSize: 35,
       fontWeight: FontWeight.bold,
-      color: Color(0xFF00CCCC),
+      color: const Color(0xFF00CCCC),
     );
   }
 
-  static TextStyle PortfolioTextHeading() {
+  static TextStyle portfolioTextHeading() {
     return GoogleFonts.signikaNegative(
         fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black);
   }
 
-  static TextStyle PortfolioTextNormal() {
+  static TextStyle portfolioTextNormal() {
     return GoogleFonts.signikaNegative(
       fontSize: 15,
       fontWeight: FontWeight.normal,
@@ -80,19 +80,19 @@ class AppTextStyles {
     );
   }
 
-  static TextStyle HintTextStyle() {
+  static TextStyle hintTextStyle() {
     return GoogleFonts.signikaNegative(
         fontSize: 20, fontWeight: FontWeight.normal, color: Colors.blueGrey);
   }
 
-  static TextStyle NavBarTextStyle({Color? color, bool hover = false}) {
+  static TextStyle navBarTextStyle({Color? color, bool hover = false}) {
     return GoogleFonts.signikaNegative(
         color: hover ? Colors.blue : Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold);
   }
 
-  static TextStyle FinePrintStyle() {
+  static TextStyle finePrintStyle() {
     return GoogleFonts.signikaNegative(
         fontSize: 15, fontWeight: FontWeight.normal, color: Colors.white);
   }

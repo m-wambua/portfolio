@@ -18,11 +18,16 @@ class AboutMe extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
+          CircleAvatar(
+            backgroundColor: AppColors.bgColor2,
+            radius: 250,
+            child: ClipOval(child: Image.asset(
             AppAsset.profile,
             height: 450,
             width: 400,
+          ),),
           ),
+          
           const SizedBox(
             width: 20,
           ),
@@ -36,9 +41,9 @@ class AboutMe extends StatelessWidget {
                   child: RichText(
                     text: TextSpan(
                         text: 'About ',
-                        style: AppTextStyles.AboutMeHeading(),
+                        style: AppTextStyles.aboutMeHeading(),
                         children: [
-                          TextSpan(text: 'Me', style: AppTextStyles.AboutMeMe())
+                          TextSpan(text: 'Me', style: AppTextStyles.aboutMeMe())
                         ]),
                   )),
               const SizedBox(
@@ -74,7 +79,7 @@ class AboutMe extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ProfilePage()));
+                                builder: (context) => const ProfilePage()));
                       },
                       buttonName: 'About Me'))
             ],

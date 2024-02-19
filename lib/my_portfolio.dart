@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/globals/app_assets.dart';
 import 'package:flutter_application_1/globals/app_colors.dart';
 import 'package:flutter_application_1/globals/app_text_styles.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class MyPortfolio extends StatefulWidget {
   const MyPortfolio({Key? key}) : super(key: key);
@@ -71,7 +72,9 @@ class _MyPortfolioState extends State<MyPortfolio> {
 
                 return FadeInUpBig(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      _launchURL('https://gpds-afafa.web.app/');
+                    },
                     onHover: (value) {
                       setState(() {
                         hoverIndex = value ? index : null;
@@ -148,5 +151,18 @@ class _MyPortfolioState extends State<MyPortfolio> {
         ],
       ),
     );
+  }
+
+  void _launchURL(String url) async {
+    try {
+      if (await canLaunchUrlString(url)) {
+        await launchUrlString(url);
+      } else {
+        print('Could not launch $url');
+      }
+    } catch (e) {
+      print('Error launching URL: $e');
+      // Handle the exception or perform an alternative action
+    }
   }
 }

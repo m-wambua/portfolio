@@ -128,15 +128,20 @@ class _MyPortfolioState extends State<MyPortfolio> {
                                   height: 20,
                                 ),
                                 CircleAvatar(
-                                  maxRadius: 25,
-                                  backgroundColor: Colors.white,
-                                  child: Image.asset(
-                                    AppAsset.share,
-                                    width: 30,
-                                    height: 30,
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
+                                    maxRadius: 25,
+                                    backgroundColor: Colors.white,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        _launchURL(
+                                            'https://gpds-afafa.web.app/');
+                                      },
+                                      child: Image.asset(
+                                        AppAsset.share,
+                                        width: 30,
+                                        height: 30,
+                                        fit: BoxFit.fill,
+                                      ),
+                                    )),
                               ],
                             ),
                           ),
